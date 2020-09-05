@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private void initViews(){
         btnAllBooks = findViewById(R.id.btnAllBooks);
         btnCurrentlyReading = findViewById(R.id.btnCurrentlyReading);
-        btnAlreadyRead = findViewById(R.id.btnAlreadyRead);
+        btnAlreadyRead = findViewById(R.id.btnAddToAlreadyRead);
         btnWishlist = findViewById(R.id.btnWishlist);
         btnFavorite = findViewById(R.id.btnFavoriteBooks);
         btnAbout = findViewById(R.id.btnAbout);

@@ -2,6 +2,7 @@ package com.example.mybooklibrary;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -22,10 +23,12 @@ public class AllBooksActivity extends AppCompatActivity {
         booksRecView = findViewById(R.id.booksRecView);
 
         booksRecView.setAdapter(adapter);
-        booksRecView.setLayoutManager(new GridLayoutManager(this, 2));
+        booksRecView.setLayoutManager(new LinearLayoutManager(this));
 
         ArrayList<Book> books = new ArrayList<>();
         books.add(new Book(1,"1Q84", "Hakumi Murakumi",1350, "https://images-na.ssl-images-amazon.com/images/I/41FdmYnaNuL._SX322_BO1,204,203,200_.jpg",
+                "A work of maddening brilliance", "Long Description"));
+        books.add(new Book(2,"1Q85", "Fake Author",1350, "https://images-na.ssl-images-amazon.com/images/I/41FdmYnaNuL._SX322_BO1,204,203,200_.jpg",
                 "A work of maddening brilliance", "Long Description"));
         adapter.setBooks(books);
     }
