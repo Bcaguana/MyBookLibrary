@@ -2,14 +2,21 @@ package com.example.mybooklibrary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+
 public class BookActivity extends AppCompatActivity {
+
+    public static final String BOOK_ID_KEY = "bookId";
 
     TextView txtBookName, txtAuthor, txtPages, txtDescription;
     ImageView imgBookPicture;
@@ -21,13 +28,57 @@ public class BookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_book);
         initViews();
 
-        //TODO: Get data from recyclerview here!
-        Book book = new Book(123,"1Q84", "Hakumi Murakumi",1350, "https://images-na.ssl-images-amazon.com/images/I/41FdmYnaNuL._SX322_BO1,204,203,200_.jpg",
-                "A work of maddening brilliance", "Long Description");
-
-        setData(book);
+        //Gets the Id of the book selected in the AllBooksActivity to extract info on it from the Utils class
+        Intent intent = getIntent();
+        if (null != intent){
+            int bookId = intent.getIntExtra(BOOK_ID_KEY, -1);
+            if (bookId != -1){
+                Book incomingBook = Utils.getInstance().getBookById(bookId);
+                if (null != incomingBook) {
+                    setData(incomingBook);
+                    
+                    handleAlreadyRead(incomingBook);
+                }
+            }
+        }
     }
 
+    /**
+     * Enable and Disable Button
+     * Adds book to Utils instance of AlreadyReadBooks ArrayList if it does not exist there already
+     * @param book
+     */
+    private void handleAlreadyRead(final Book book) {
+        ArrayList<Book> alreadyReadBooks = Utils.getInstance().getAlreadyReadBooks();
+
+        boolean existInAlreadyReadBooks = false;
+
+        for(Book b: alreadyReadBooks) {
+            if (b.getId() == book.getId())
+                existInAlreadyReadBooks = true;
+        }
+
+        if (existInAlreadyReadBooks) {
+            btnAlreadyRead.setEnabled(false);
+        }else {
+            btnAlreadyRead.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Utils.getInstance().addToAlreadyRead(book)){
+                        Toast.makeText(BookActivity.this,"Book added to Already Read List", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(BookActivity.this,"Book was not added to Already Read List", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+
+    /**
+     * Receives Book object and displays the data about the book in the TextViews
+     * Displays picture of book in ImageView with Glide
+     * @param book
+     */
     private void setData(Book book) {
         txtBookName.setText(book.getName());
         txtAuthor.setText(book.getAuthor());
@@ -39,6 +90,10 @@ public class BookActivity extends AppCompatActivity {
                 .into(imgBookPicture);
     }
 
+    /**
+     * Initializes TextViews and ImageViews and Buttons
+     * This happens first
+     */
     private void initViews(){
         txtBookName = findViewById(R.id.txtBookName);
         txtAuthor = findViewById(R.id.txtAuthor);

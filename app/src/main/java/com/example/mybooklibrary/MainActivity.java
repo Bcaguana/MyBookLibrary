@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**Initialize the Buttons in the launch page
+     *
+     */
     private void initViews(){
         btnAllBooks = findViewById(R.id.btnAllBooks);
         btnCurrentlyReading = findViewById(R.id.btnCurrentlyReading);

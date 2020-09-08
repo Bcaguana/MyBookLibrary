@@ -20,6 +20,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import static com.example.mybooklibrary.BookActivity.BOOK_ID_KEY;
+
 public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.ViewHolder>{
 
     private static final String TAG = "BookRecViewAdapter";
@@ -47,10 +49,13 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                 .load(books.get(position).getImageUrl())
                 .into(holder.imgBook);
 
+        //Sets an OnClickListener on the CardViews to send info about the displayed book to the BookActivity in the Intent
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, BookActivity.class);
+                intent.putExtra(BOOK_ID_KEY, books.get(position).getId());
+                intent.putExtra("booksId", books.get(position).getId());
                 mContext.startActivity(intent);
             }
         });
