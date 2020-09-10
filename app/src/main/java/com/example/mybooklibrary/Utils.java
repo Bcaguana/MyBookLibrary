@@ -33,7 +33,6 @@ public class Utils {
 
     //Takes data in from a specified source to add to the Utils instance. Will change to take data from a database at a later date
     private void initData() {
-        ArrayList<Book> books = new ArrayList<>();
         allBooks.add(new Book(1,"1Q84", "Hakumi Murakumi",1350, "https://images-na.ssl-images-amazon.com/images/I/41FdmYnaNuL._SX322_BO1,204,203,200_.jpg",
                 "A work of maddening brilliance", "Long Description"));
         allBooks.add(new Book(2,"1Q85", "Fake Author",1350, "https://images-na.ssl-images-amazon.com/images/I/41FdmYnaNuL._SX322_BO1,204,203,200_.jpg",

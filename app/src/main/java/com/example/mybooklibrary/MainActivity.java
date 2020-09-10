@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btnAllBooks, btnCurrentlyReading, btnAlreadyRead, btnWishlist, btnFavorite, btnAbout;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+        //makeDatabase();
 
         btnAllBooks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +91,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Utils.getInstance();
+    }
+
+    private void makeDatabase() {
+        ArrayList<Book> allBooks = new ArrayList<>();
+        allBooks.add(new Book(1,"1Q84", "Hakumi Murakumi",1350, "https://images-na.ssl-images-amazon.com/images/I/41FdmYnaNuL._SX322_BO1,204,203,200_.jpg",
+                "A work of maddening brilliance", "Long Description"));
+        allBooks.add(new Book(2,"1Q85", "Fake Author",1350, "https://images-na.ssl-images-amazon.com/images/I/41FdmYnaNuL._SX322_BO1,204,203,200_.jpg",
+                "A work of maddening brilliance", "Long Description"));
+        DatabaseHelper databaseHelper = new DatabaseHelper(MainActivity.this);
+        databaseHelper.addOne(allBooks.get(0));
+        databaseHelper.addOne(allBooks.get(1));
     }
 
     /**Initialize the Buttons in the launch page

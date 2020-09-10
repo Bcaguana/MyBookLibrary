@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class AllBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_books);
+        Intent intent = getIntent();
+        intent.getExtras();
 
         adapter = new BookRecViewAdapter(this, "allBooks");
         booksRecView = findViewById(R.id.booksRecView);
@@ -25,6 +28,7 @@ public class AllBooksActivity extends AppCompatActivity {
         booksRecView.setAdapter(adapter);
         booksRecView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter.setBooks(Utils.getInstance().getAllBooks());
+        DatabaseHelper databaseHelper = new DatabaseHelper(AllBooksActivity.this);
+        adapter.setBooks(databaseHelper.getEveryone());
     }
 }
