@@ -6,4 +6,24 @@
     <string name="activity_want_to_read_books">Want to Read Books</string>
     <string name="activity_currently_reading_books">Currently Reading</string>
     <string name="activity_favorite_books">Favorites</string>
+
+    <string name="txt_profile_pic">Profile picture of the user</string>
+    <string name="txt_my_library">My Library</string>
+    <string name="btn_currently_reading">Currently Reading</string>
+    <string name="btn_see_all_books">See All Books</string>
+    <string name="btn_already_read">Already Read Books</string>
+    <string name="btn_your_wish_list">Want to Read</string>
+    <string name="btn_your_favorites">Your Favorites</string>
+    <string name="btn_abt">About</string>
+    <string name="abt_dev">Developed By Brandon Caguana</string>
+
+    <string name="add_to_fav">Add to Favorites</string>
+    <string name="book_name">Book Name</string>
+    <string name="book_author">Author</string>
+    <string name="book_pages">Pages</string>
+    <string name="book_desc">Description</string>
+    <string name="book_desc_filler">Insert Description</string>
+    <string name="not_available">n/a</string>
+
+    <string name="btn_delete">Delete</string>
 </resources>

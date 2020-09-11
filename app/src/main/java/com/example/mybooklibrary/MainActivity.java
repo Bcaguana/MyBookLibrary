@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         btnAllBooks = findViewById(R.id.btnAllBooks);
         btnCurrentlyReading = findViewById(R.id.btnCurrentlyReading);
         btnAlreadyRead = findViewById(R.id.btnAddToAlreadyRead);
-        btnWishlist = findViewById(R.id.btnWishlist);
+        btnWishlist = findViewById(R.id.btnWishList);
         btnFavorite = findViewById(R.id.btnFavoriteBooks);
         btnAbout = findViewById(R.id.btnAbout);
     }

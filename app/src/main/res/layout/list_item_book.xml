@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Book Name"
+                android:text="@string/not_available"
                 android:id="@+id/txtBookNameLabel"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/collapsedRelLayout"
             android:id="@+id/expandedRelLayout"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Brandon"
+                android:text="@string/not_available"
                 android:id="@+id/txtAuthorLabel"
                 android:layout_below="@+id/authorText"/>
 
@@ -83,7 +83,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Delete"
+                android:text="@string/btn_delete"
                 android:id="@+id/btnDelete"
                 android:layout_below="@+id/txtShortDesc"
                 android:layout_toStartOf="@+id/btnUpArrow"

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="My Library"
+        android:text="@string/txt_my_library"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="See All Books"
+        android:text="@string/btn_see_all_books"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Currently Reading Books"
+        android:text="@string/btn_currently_reading"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@+id/btnAllBooks"
         app:layout_constraintStart_toStartOf="@+id/btnAllBooks"
@@ -46,18 +46,18 @@
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Already Read Books"
+        android:text="@string/btn_already_read"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@+id/btnCurrentlyReading"
         app:layout_constraintStart_toStartOf="@+id/btnCurrentlyReading"
         app:layout_constraintTop_toBottomOf="@+id/btnCurrentlyReading" />
 
     <Button
-        android:id="@+id/btnWishlist"
+        android:id="@+id/btnWishList"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Your Wishlist"
+        android:text="@string/btn_your_wish_list"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@+id/btnAddToAlreadyRead"
         app:layout_constraintStart_toStartOf="@+id/btnAddToAlreadyRead"
@@ -68,11 +68,11 @@
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="See Your Favorites"
+        android:text="@string/btn_your_favorites"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/btnWishlist"
-        app:layout_constraintStart_toStartOf="@+id/btnWishlist"
-        app:layout_constraintTop_toBottomOf="@+id/btnWishlist" />
+        app:layout_constraintEnd_toEndOf="@+id/btnWishList"
+        app:layout_constraintStart_toStartOf="@+id/btnWishList"
+        app:layout_constraintTop_toBottomOf="@+id/btnWishList" />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -83,14 +83,15 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/txt_profile_pic" />
 
     <Button
         android:id="@+id/btnAbout"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="About"
+        android:text="@string/btn_abt"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@+id/btnFavoriteBooks"
         app:layout_constraintStart_toStartOf="@+id/btnFavoriteBooks"
@@ -101,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Developed By Brandon Caguana"
+        android:text="@string/abt_dev"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
